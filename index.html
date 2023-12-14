@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" defer></script>
+    <title>To do Avançado</title>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>To do List Avançado</h1>
+        </header>
+        <div class="add-task">
+            <label for="task">Adicione sua tarefa:</label>
+            <div>
+                <input type="text" id="task-input" placeholder="O que você vai fazer?" name="task">
+                <button id="add-btn" class="released"><i class="fi fi-br-plus"></i></button>
+            </div>
+        </div>
+        <div id="edit-task" class="hide">
+            <label for="edit-task">Edite sua tarefa:</label>
+            <div>
+                <input type="text" id="edit-input" name="edit-task">
+                <button id="edit-check" class=""><i class="fi fi-bs-refresh"></i></button>
+            </div>
+            <button id="cancel-edit-btn">Cancelar</button>
+        </div>
+        <div class="search-task">
+            <div class="input-search">
+                <label for="search">Pesquisar:</label>
+                <input type="search" placeholder="Buscar..." id="search-input" name="search">
+            </div>
+            <div id="filter">
+                <label for="Todos">Filtrar:</label>
+                <select id="filter-select">
+                    <option value="all">Todos</option>
+                    <option value="todo">A fazer</option>
+                    <option value="done">Feitos</option>
+                </select>
+            </div>
+        </div>
+        <div id="list-container">
+            <ul id="task-list">
+                <div id="task-template" class="hide">
+                    <li id="task">
+                        <p></p>
+                        <div class="task-buttons">
+                            <button class="finish-todo"><i class="fi fi-bs-check"></i></button> 
+                            <button class="edit-todo"><i class="fi fi-rs-pencil"></i></i></i></button> 
+                            <button class="delete-todo"><i class="fi fi-rs-trash"></i></i></button> 
+                        </div> 
+                    </li> 
+                </div> 
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
