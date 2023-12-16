@@ -59,9 +59,51 @@ const updateTodo = (text) => {
         if(todoTitle.innerText == oldInputValue) {
             todoTitle.innerText = text;
         }
-    })
-}
+    });
+};
 
+const getSearchTodos = (search) => {
+
+    const todos = document.querySelectorAll("#task");
+
+    todos.forEach((todo) =>{
+        let todoTitle = todo.querySelector("p").innerText.toLocaleLowerCase();
+        const normalizedSearch = search.toLowerCase();
+        todo.style.display = "flex";
+
+        if(!todoTitle.includes(normalizedSearch)) {
+            todo.style.display = "none";
+        }
+    });
+    
+};
+
+const filterTodos = (filterValue) =>{
+    const todos = document.querySelectorAll("#task");
+
+        switch (filterValue){
+            case "all":
+                todos.forEach((todo) => (todo.style.display = "flex"));
+                break;
+
+            case "done":
+                todos.forEach((todo) => todo.classList.contains("done") 
+                    ? (todo.style.display = "flex") 
+                    : (todo.style.display = "none"));
+                break;
+
+            case "todo":
+                todos.forEach((todo) => 
+                    !todo.classList.contains("done") 
+                    ? (todo.style.display = "flex") 
+                    : (todo.style.display = "none"));
+                break;
+
+            default:
+                break;
+        };
+
+    };
 
 
 // Eventos
@@ -120,3 +162,13 @@ editCheckBtn.addEventListener("click", (e) =>{
 
     toggleForms();
 });
+
+searchInput.addEventListener("keyup", (e) =>{
+    const search = e.target.value;
+    getSearchTodos(search);
+});
+
+filterSelect.addEventListener("change", (e) =>{
+    const filterValue = e.target.value;
+    filterTodos(filterValue);
+})
