@@ -13,7 +13,9 @@
 }
 
 body {
-    background-color: #555;
+    background-image: url(https://i0.wp.com/cdn.eso.org/images/large/eso1802a.jpg?ssl=1);
+    background-size: cover;
+    background-position: center;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -157,18 +159,18 @@ header {
 
 /* Contéudo, Task list */
 
-#task {
+.todo {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: #2a4b7c;
     padding: 1.5rem;
     align-items: center;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #ddd;
     margin-bottom: .1rem;
     transition: .3s;
 }
 
-#task p{
+.todo p{
     font-size: 18px;
     font-weight: bold;
     color: #fff;
@@ -176,10 +178,14 @@ header {
 }
 
 .done {
-    background-color: #395169;
+    background-color: #222;
 }
 
 .done p {
     text-decoration: line-through;
     font-style: italic;
+}
+
+.todo button {
+    margin-left: .2rem;
 }
